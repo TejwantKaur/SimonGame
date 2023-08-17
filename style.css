@@ -1,0 +1,41 @@
+body{
+    /* font-family: monospace; */
+    text-align: center;
+    color: #b1d9fe;
+    background-color: rgb(70, 101, 150);
+}
+h2{
+    font-size: 1.1rem;
+}
+.red{
+    background-color: #d95980;
+}
+.yellow{
+    background-color: #f99b45;
+}
+.purple{
+    background-color: #819ff9; 
+}
+.blue{
+    background-color: #63aac0;
+}
+.flash{
+    background-color: aliceblue;
+}
+.user-flash{
+    background-color: rgb(109, 177, 109);
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.outer-box{
+}
+.btn{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    margin: 1rem;
+    border-radius: 1rem;
+}
