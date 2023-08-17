@@ -6,7 +6,17 @@ let started = false;
 let level = 0;
 let h2 = document.querySelector("h2");
 
-document.addEventListener("click",function(){
+// document.addEventListener("keypress",function(){
+//     if(started == false){
+//         console.log("Game Started");
+//         started = true;
+
+//         levelUP();
+//     }
+// });
+
+let startBtn=document.querySelector(".start");
+startBtn.addEventListener("click",function(){
     if(started == false){
         console.log("Game Started");
         started = true;
@@ -22,11 +32,11 @@ function levelUP(){
     level++;
     h2.innerText=`Level-${level}`;
 
-    let randIdx = Math.floor(Math.random()*3);
+    let randIdx = Math.floor(Math.random()*4);
     let randClr = btns[randIdx];
     let randBtn = document.querySelector(`.${randClr}`);
 
-    // console.log(randIdx);
+    console.log(randIdx);
     // console.log(randClr);
     // console.log(randBtn);
 
