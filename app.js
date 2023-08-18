@@ -1,8 +1,9 @@
 let gameSeq = [];
 let userSeq = [];
-let btns = ["yellow", "red", "purple", "green"]
+let btns = ["yellow", "red", "purple", "blue"]
 
 let started = false;
+
 let level = 0;
 let h2 = document.querySelector("h2");
 
@@ -26,23 +27,24 @@ startBtn.addEventListener("click",function(){
 });
 
 function levelUP(){
-    
     userSeq=[];
     
     level++;
     h2.innerText=`Level-${level}`;
 
     let randIdx = Math.floor(Math.random()*4);
-    let randClr = btns[randIdx];
-    let randBtn = document.querySelector(`.${randClr}`);
-
     console.log(randIdx);
+    let randClr = btns[randIdx];
+    // let randBtn = document.querySelector(`#${randClr}`);
+    let randBtn = document.getElementById(randClr);
+
+    // console.log(randIdx);
     // console.log(randClr);
     // console.log(randBtn);
 
     gameSeq.push(randClr);
     console.log(gameSeq);
-    console.log("after"+userSeq);
+    // console.log("after"+userSeq);
 
     gameFlash(randBtn);
 }
@@ -63,19 +65,22 @@ function userFlash(btn){
 }
 
 let allBtns = document.querySelectorAll(".btn")
+
 function btnPressed(){
-    // console.log("btn was pressed")
-    // console.log(this);
+        // console.log("btn was pressed")
+        // console.log(this);
 
-    let btn = this;
-    userFlash(btn);
-    let userColor = btn.getAttribute("id");
-    console.log(userColor);
-    userSeq.push(userColor);
-    console.log("btnpress->"+userSeq);
+        let btn = this;
+        userFlash(btn);
+        let userColor = btn.getAttribute("id");
+        console.log(userColor);
+        userSeq.push(userColor);
+        // console.log("btnpress->"+userSeq);
 
-    checkAns(userSeq.length-1);
-}
+        checkAns(userSeq.length-1);
+    }
+
+
 function checkAns(idx){
     // console.log("curr lvl="+level);
     // let idx=level-1;
@@ -86,7 +91,7 @@ function checkAns(idx){
         }
     }
     else{
-        h2.innerHTML=`Game Over! your score was <b>${level}</b> <br>Press any key to start`;
+        h2.innerHTML=`Game Over! your score was <b>${level}</b> <br>Press START to start again`;
         document.querySelector("body").style.backgroundColor= "red";
         setTimeout(function(){
             document.querySelector("body").style.backgroundColor = "rgb(70, 101, 150)";

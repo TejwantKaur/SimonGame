@@ -3,6 +3,7 @@ body{
     text-align: center;
     color: #b1d9fe;
     background-color: rgb(70, 101, 150);
+    cursor: default;
 }
 h2{
     font-size: 1.1rem;
@@ -42,6 +43,7 @@ h2{
     font-family: cursive;
     font-size: 1.25rem;
     color: #234c72;
+    cursor: pointer;
 }
 .btn{
     height: 100px;
@@ -49,8 +51,11 @@ h2{
     border: 2px solid black;
     margin: 1rem;
     border-radius: 1rem;
-    
+    cursor: pointer;
 }
+/* .btn:hover{
+    transform:scale(1.1rem);
+} */
 footer p{
     text-align: end;
     margin: 4rem 2rem;
